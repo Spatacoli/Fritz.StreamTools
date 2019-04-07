@@ -13,6 +13,8 @@ namespace Fritz.StreamTools.Hubs
 		// Cheer 200 parithon 12/18/2018
 		// Cheer 500 pharewings 12/18/2018
 		Task AlertFritz();
+		Task PlaySound(string soundName);
+		Task StopSound();
 		Task ClientConnected(string connectionId);
 	}
 
@@ -23,9 +25,19 @@ namespace Fritz.StreamTools.Hubs
 			return this.Clients.Others.ClientConnected(this.Context.ConnectionId);
 		}
 
+		public Task PlaySound(string soundName) 
+		{
+			return this.Clients.Others.PlaySound(soundName);
+		}
+
 		public Task AlertFritz()
 		{
 			return this.Clients.Others.AlertFritz();
+		}
+
+		public Task StopSound()
+		{
+			return this.Clients.Others.StopSound();
 		}
 	}
 }

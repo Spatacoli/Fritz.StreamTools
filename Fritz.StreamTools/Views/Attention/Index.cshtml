@@ -15,10 +15,16 @@
 	<script>
 		var audio = new Audio('@Url.Content(@"~/contents/hey_listen.mp3")');
 		var scottAudio = new Audio('@Url.Content(@"~/contents/Scott!!.mp3")');
-
+		var sound = null;
 		var hub = new AttentionHub();
 		hub.onAlertFritz = () => {
 			alertFritz();
+		}
+		hub.onPlaySound = soundName => {
+			playSound(soundName);
+		}
+		hub.onStopSound = () => {
+			stopSound();
 		}
 
 		hub.onSummonScott = () => {
@@ -27,6 +33,18 @@
 
 		function alertFritz() {
 			audio.play();
+		}
+
+		function playSound(soundName) {
+			//TODO: verify sound name is a good value first
+			sound = new Audio('/contents/' + soundName + '.mp3');
+			sound.addEventListener('canplaythrough', () => sound.play(), false);
+		}
+
+		function stopSound() {
+			if (sound) {
+				sound.src = "";
+			}
 		}
 
 		(function () {
