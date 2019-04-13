@@ -2,11 +2,8 @@
 class AttentionHub {
 	constructor() {
 		this.onAlertFritz = null;
-<<<<<<< HEAD
 		this.onSummonScott = null;
-=======
 		this.onPlaySound = null;
->>>>>>> Add a play sound command and a stop command to stop currently playing sounds.
 		this.debug = true;
 		this._hub = null;
 	}
@@ -39,13 +36,11 @@ class AttentionHub {
 			if (this.onAlertFritz) this.onAlertFritz();
 		});
 
-<<<<<<< HEAD
 		this._hub.on("SummonScott", () => {
 			if (this.debug) console.debug("Summoning Scott!");
 			if (this.onSummonScott) this.onSummonScott();
 		});
 
-=======
 		this._hub.on("PlaySound", (soundName) => {
 			if (this.debug) console.debug(`PlaySound: ${soundName}`);
 			if (this.onPlaySound) this.onPlaySound(soundName);
@@ -56,7 +51,6 @@ class AttentionHub {
 			if (this.onStopSound) this.onStopSound();
 		})
 
->>>>>>> Add a play sound command and a stop command to stop currently playing sounds.
 		return this._hub.start();
 	}
 

@@ -31,7 +31,6 @@ namespace Fritz.StreamTools.Hubs
 			return this.Clients.Others.AlertFritz();
 		}
 
-<<<<<<< HEAD
 		public Task SummonScott()
 		{
 
@@ -39,7 +38,6 @@ namespace Fritz.StreamTools.Hubs
 
 		}
 
-=======
 		public Task PlaySound(string soundName)
 		{
 			return this.Clients.Others.PlaySound(soundName);
@@ -49,6 +47,5 @@ namespace Fritz.StreamTools.Hubs
 		{
 			return this.Clients.Others.StopSound();
 		}
->>>>>>> Add a play sound command and a stop command to stop currently playing sounds.
 	}
 }
