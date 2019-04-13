@@ -48,7 +48,7 @@ namespace Fritz.StreamTools.StartupServices
 			services.AddSingleton<IHostedService, FritzBot>();
 
 			services.AddSingleton(new GitHubClient(new ProductHeaderValue("Fritz.StreamTools")));
-	  	FritzBot.RegisterCommands(services);
+	  		FritzBot.RegisterCommands(services);
 
 			services.AddLazyCache();
 
@@ -66,7 +66,7 @@ namespace Fritz.StreamTools.StartupServices
 
 			services.AddTransient(_ => new GitHubClient(new ProductHeaderValue("Fritz.StreamTools"))
 			{
-				Credentials = new Credentials(Configuration["GitHub:User"], Configuration["GitHub:AuthenticationToken"])
+				Credentials = new Credentials(Configuration["GitHub:User"])
 			});
 
 			services.AddHttpClient("GitHub", c =>

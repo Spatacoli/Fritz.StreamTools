@@ -19,7 +19,7 @@ namespace Fritz.StreamTools.Models
 
 		public ICollection<string> ExcludeUsers { get; set; }
 
-		public string RepositoryCsv { get; set; } = "csharpfritz/Fritz.StreamTools,csharpfritz/CoreWiki";
+		public string RepositoryCsv { get; set; } = "spatacoli/Fritz.StreamTools";
 
 		public string DisplayMode {get;set;} = "h-scroll";
 
